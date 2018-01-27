@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: b3738cc7e9e62e54da5d76b643518a43
-timeCreated: 1517015244
+timeCreated: 1517018915
 licenseType: Pro
 TextureImporter:
   fileIDToRecycleName:
@@ -48,8 +48,8 @@ TextureImporter:
     21300082: Char_Head_2
     21300084: Char_Hair_Short_Brown
     21300086: Char_Hair_Pony_Brown
-    21300088: Char_Torso_Default
-    21300090: Char_Torso_Reach
+    21300088: Char_Torso_ReachUp
+    21300090: Char_Torso_ReachBack
     21300092: Char_Head_3
     21300094: Char_Hair_Short_Red
     21300096: Char_Hair_Pony_Red
@@ -62,6 +62,8 @@ TextureImporter:
     21300110: Char_Arm_4
     21300112: CR_WallBoard_CenterTop
     21300114: CR_WallBoard_CenterBottom
+    21300116: Classroom_0
+    21300118: Char_Torso_ReachSide
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -754,7 +756,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Char_Torso_Default
+      name: Char_Torso_ReachUp
       rect:
         serializedVersion: 2
         x: 384
@@ -768,7 +770,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Char_Torso_Reach
+      name: Char_Torso_ReachBack
       rect:
         serializedVersion: 2
         x: 512
@@ -930,7 +932,7 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -941,6 +943,34 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 1408
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Classroom_0
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 1024
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Char_Torso_ReachSide
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1024
         width: 128
         height: 128
       alignment: 0
