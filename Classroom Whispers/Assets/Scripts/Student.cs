@@ -35,4 +35,17 @@ public class Student : MonoBehaviour
     {
 		
 	}
+
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.green;
+        foreach (var cs in Students)
+        {
+            if (cs.Student != null)
+            {
+                Vector3 dir = cs.Student.gameObject.transform.position - this.gameObject.transform.position;                
+                Gizmos.DrawRay(this.gameObject.transform.position, dir);
+            }
+        }        
+    }
 }
