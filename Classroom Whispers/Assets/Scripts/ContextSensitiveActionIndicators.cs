@@ -12,7 +12,7 @@ public class ContextSensitiveActionIndicators : MonoBehaviour {
     private float ArrowAnimTime = 0.0f;
     private float ArrowDir = 1.0f;
 
-    bool Enabled = false;
+    bool HasPlayerFocus = false;
     bool[] ArrowsEnabled = { false, false, false, false };
     int ArrowSelected = -1;
 
@@ -40,7 +40,7 @@ public class ContextSensitiveActionIndicators : MonoBehaviour {
         }
     }
 	
-    public void SetEnabled(bool enabled)
+    public void SetHasPlayerFocus(bool enabled)
     {
         if (enabled)
         {
@@ -48,7 +48,7 @@ public class ContextSensitiveActionIndicators : MonoBehaviour {
             ArrowDir = 1.0f;
         }
 
-        Enabled = enabled;
+        HasPlayerFocus = enabled;
     }
 
 	// Update is called once per frame
@@ -58,19 +58,44 @@ public class ContextSensitiveActionIndicators : MonoBehaviour {
 
     private void AnimateArrows()
     {
-        if (ArrowSelected > -1)
+        if (!HasPlayerFocus)
         {
+            // static arrows, is not player focus
+            ArrowAnimTime = 0.0f;
+            for (int i = 0; i < 4; ++i)
+            {
+                Vector3 scale = ArrowIndicators[i].transform.localScale;
+                scale.x = 0.4f;
+                scale.y = 0.4f;
+                ArrowIndicators[i].transform.localScale = scale;
+                ArrowIndicators[i].SetActive(ArrowsEnabled[i]);
 
+                ArrowIndicators[i].gameObject.transform.localPosition = Student.DirectionVectors[i] * ArrowMinOffset;
+            }
         }
         else
         {
-            float arrowOffset = QuadraticInOut(ArrowAnimTime, ArrowMinOffset, ArrowMaxOffset - ArrowMinOffset, ArrowPulseTime);
-            for (int i=0; i < 4; ++i)
+            if (ArrowSelected > -1)
             {
-                ArrowIndicators[i].SetActive(Enabled && ArrowsEnabled[i]);
-                ArrowIndicators[i].gameObject.transform.localPosition = Student.DirectionVectors[i] * arrowOffset;
-            }            
-        }
+                // playerholder for sporty / confirmable directions
+
+            }
+            else
+            {
+                // animating arrows, player has focus
+                float arrowOffset = QuadraticInOut(ArrowAnimTime, ArrowMinOffset, ArrowMaxOffset - ArrowMinOffset, ArrowPulseTime);
+                for (int i = 0; i < 4; ++i)
+                {
+                    Vector3 scale = ArrowIndicators[i].transform.localScale;
+                    scale.x = 1.0f;
+                    scale.y = 1.0f;
+                    ArrowIndicators[i].transform.localScale = scale;
+
+                    ArrowIndicators[i].SetActive(ArrowsEnabled[i]);
+                    ArrowIndicators[i].gameObject.transform.localPosition = Student.DirectionVectors[i] * arrowOffset;
+                }
+            }
+        }        
 
         ArrowAnimTime += Time.deltaTime * ArrowDir;
         if (ArrowAnimTime > ArrowPulseTime)

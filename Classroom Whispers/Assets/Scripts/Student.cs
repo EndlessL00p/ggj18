@@ -56,6 +56,7 @@ public class Student : MonoBehaviour
             {
                 isHoldingNote = true;
                 NoteObject.SetActive(true);
+                indicators.SetHasPlayerFocus(true);
             }
             else
             {
@@ -126,7 +127,7 @@ public class Student : MonoBehaviour
             isHoldingNote = false;
             s.RecieveNote(this, a_Direction);
 
-            indicators.SetEnabled(false);
+            indicators.SetHasPlayerFocus(false);
         }
     }
 
@@ -136,7 +137,7 @@ public class Student : MonoBehaviour
         PlayPassAnimation(oppDir);
         IsHoldingNote = true;
 
-        indicators.SetEnabled(true);
+        indicators.SetHasPlayerFocus(true);
     }
 
     private void PlayPassAnimation(PassDirection a_Direction)
