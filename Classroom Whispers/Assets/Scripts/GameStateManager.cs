@@ -36,6 +36,7 @@ public class GameStateManager : MonoBehaviour
         gameStates.Add(new SplashState());
         gameStates.Add(new MainMenuState());
         gameStates.Add(new MainGameState());
+        gameStates.Add(new PauseState());
         SwitchGameState(GameStateID.MainGame);
     }
 
@@ -151,6 +152,16 @@ public class MainMenuState : BaseState
         base.Start();
         Time.timeScale = 0;
     }
+
+    public override void Update()
+    {
+        ShowLog();
+    }
+
+    private void ShowLog()
+    {
+        Debug.Log("This is Main Menu");
+    }
 }
 
 public class MainGameState : BaseState
@@ -173,7 +184,7 @@ public class MainGameState : BaseState
     public override void Update()
     {
         UpdateInput();
-        //ShowLog();
+        ShowLog();
     }
 
     public void UpdateInput()
@@ -217,7 +228,8 @@ public class MainGameState : BaseState
         if (Input.GetKeyDown(KeyCode.Space))
         {
 
-        }        
+        }
+
     }
 
     private bool CheckEndStudent()
@@ -238,4 +250,45 @@ public class MainGameState : BaseState
     {
         Debug.Log("This is Main Game State");
     }
+}
+
+public class PauseState : BaseState
+{
+    GameStateManager gm;
+
+    public PauseState()
+    {
+        stateID = GameStateID.PauseMenu;
+    }
+
+    public override void Start()
+    {
+        //set world time scale to 0
+        Time.timeScale = 0.0f;
+        //get game manager
+        gm = GameObject.Find("GameManager").GetComponent<GameStateManager>();
+        //set the index[4] object (Pause) in UI list to active
+        gm.uiObjList[4].SetActive(true);
+
+    }
+
+    public override void Update()
+    {
+        //Display current sate in console
+        ShowLog();
+    }
+
+    public override void Shutdown()
+    {
+        //set current inactive when shutdown
+        gm.uiObjList[4].SetActive(false);
+    }
+
+    //Display current sate in console
+    private void ShowLog()
+    {
+        Debug.Log("This is Pause Menu");
+    }
+
+
 }
