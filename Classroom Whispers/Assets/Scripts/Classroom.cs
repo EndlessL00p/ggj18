@@ -26,7 +26,7 @@ public class ClassroomEditor : Editor
         Classroom myScript = target as Classroom;        
         if (GUILayout.Button("Generate Student Links"))
         {
-            GenerateStudentLinks();   
+            GenerateStudentLinks();            
         }
     }
 
@@ -79,13 +79,14 @@ public class ClassroomEditor : Editor
                     cs.Student = links[j];
                     s.Students.Add(cs);
                 }
-            } 
+            }
+            EditorUtility.SetDirty(s);
         }
     }
 
     private void GetDirectionAndDistanceToOtherStudent(Student s1, Student s2, out PassDirection passDirection, out float distance)
     {
-        var dir = s1.gameObject.transform.position - s2.gameObject.transform.position;
+        var dir = s2.gameObject.transform.position - s1.gameObject.transform.position;
         distance = dir.magnitude;
         dir = dir.normalized;
 

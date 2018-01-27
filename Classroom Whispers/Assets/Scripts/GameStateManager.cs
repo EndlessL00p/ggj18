@@ -173,7 +173,7 @@ public class MainGameState : BaseState
     public override void Update()
     {
         UpdateInput();
-        ShowLog();
+        //ShowLog();
     }
 
     public void UpdateInput()

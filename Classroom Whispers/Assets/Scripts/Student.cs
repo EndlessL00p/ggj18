@@ -21,6 +21,8 @@ public class ConnectedStudent
 
 public class Student : MonoBehaviour
 {
+    private string[] PassAnimations = { "ReachLeft", "ReachRight", "ReachUp", "ReachBack" };
+    private PassDirection[] OppositeDirection = { PassDirection.RIGHT, PassDirection.LEFT, PassDirection.DOWN, PassDirection.UP };
     public static Vector3[] DirectionVectors = { Vector3.left, Vector3.right, Vector3.up, Vector3.down };
 
     //public ArrayList<string> test;
@@ -31,22 +33,31 @@ public class Student : MonoBehaviour
 
     private bool isHoldingNote;
 
-    private GameObject noteObj;
+    public GameObject NoteObject = null;
+
+    const float idleResetTimer = 1.0f;
+    float animTimer = 0.0f;
+
+    private Animator anim = null;
 
     // Use this for initialization
     void Start ()
     {
-        noteObj = gameObject.transform.GetChild(0).gameObject;
+        anim = GetComponent<Animator>();
 
-        if (isStartStudent == true && isEndStudent == false)
+        NoteObject = gameObject.transform.GetChild(1).gameObject; // todo rewrite
+        if (NoteObject != null)
         {
-            isHoldingNote = true;
-            noteObj.SetActive(true);
-        }
-        else
-        {
-            isHoldingNote = false;
-            noteObj.SetActive(false);
+            if (isStartStudent == true && isEndStudent == false)
+            {
+                isHoldingNote = true;
+                NoteObject.SetActive(true);
+            }
+            else
+            {
+                isHoldingNote = false;
+                NoteObject.SetActive(false);
+            }
         }
     }
 	
@@ -55,14 +66,23 @@ public class Student : MonoBehaviour
     {
         if (isHoldingNote == true)
         {
-            noteObj.SetActive(true);
+            NoteObject.SetActive(true);
         }
         else
         {
-            noteObj.SetActive(false);
+            NoteObject.SetActive(false);
         }
 
-	}
+        if (animTimer < 0)
+        {
+            anim.SetTrigger("Idle");
+            animTimer = 0;
+        }
+        if (animTimer >= 0)
+        {
+            animTimer -= Time.deltaTime;            
+        }
+    }
 
 
     ///////////////////////
@@ -91,9 +111,26 @@ public class Student : MonoBehaviour
 
         if (s != null)
         {
+            PlayPassAnimation(a_Direction);
             isHoldingNote = false;
-            s.IsHoldingNote = true;
+            s.RecieveNote(this, a_Direction);
         }
+    }
+
+    public void RecieveNote(Student a_PassingStudent, PassDirection a_Direction)
+    {
+        PassDirection oppDir = OppositeDirection[(int)a_Direction];
+        PlayPassAnimation(oppDir);
+        IsHoldingNote = true;
+    }
+
+    private void PlayPassAnimation(PassDirection a_Direction)
+    {
+        int idir = (int)a_Direction;
+        string animTrigger = PassAnimations[idir];
+        
+        anim.SetTrigger(animTrigger);
+        animTimer = idleResetTimer;
     }
 
     //Get connected student
