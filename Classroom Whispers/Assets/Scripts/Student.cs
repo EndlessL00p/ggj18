@@ -26,7 +26,6 @@ public class Student : MonoBehaviour
     //public ArrayList<string> test;
     public List<ConnectedStudent> Students = new List<ConnectedStudent>();
 
-
     public bool isStartStudent;
     public bool isEndStudent;
 
@@ -56,49 +55,50 @@ public class Student : MonoBehaviour
     {
         if (isHoldingNote == true)
         {
-            if (Input.GetKeyDown(KeyCode.LeftArrow))
-            {
-                Student s = GetConnectedStudent(PassDirection.LEFT);
-
-                if (s != null)
-                {
-
-
-                }
-            }
-
-            if (Input.GetKeyDown(KeyCode.RightArrow))
-            {
-
-            }
-
-            if (Input.GetKeyDown(KeyCode.UpArrow))
-            {
-
-            }
-
-            if (Input.GetKeyDown(KeyCode.DownArrow))
-            {
-
-            }
-
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-
-            }
+            noteObj.SetActive(true);
+        }
+        else
+        {
+            noteObj.SetActive(false);
         }
 
 	}
 
+
+    ///////////////////////
+    ///Getter and Setter///
+    ///////////////////////
+
     public bool IsHoldingNote
     {
+        set { isHoldingNote = value; }
         get { return isHoldingNote; }
     }
 
+    public bool IsEndStudent
+    {
+        set { isEndStudent = value; }
+        get { return isEndStudent; }
+    }
+
+    //pass note
+    public void PassNote(PassDirection a_Direction)
+    {
+        if (isHoldingNote != true)
+            return;
+
+        Student s = GetConnectedStudent(a_Direction);
+
+        if (s != null)
+        {
+            isHoldingNote = false;
+            s.IsHoldingNote = true;
+        }
+    }
+
+    //Get connected student
     private Student GetConnectedStudent(PassDirection a_Direction)
     {
-        //this.Students.Where(x => x.Direction == a_Direction).FirstOrDefault();
-
         foreach(ConnectedStudent cs in this.Students)
         {
             if (cs.Direction == a_Direction)
@@ -110,10 +110,11 @@ public class Student : MonoBehaviour
         return null;
     }
 
+    //Show linked students
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.green;
-        foreach (var cs in Students)
+        foreach (ConnectedStudent cs in Students)
         {
             if (cs.Student != null)
             {

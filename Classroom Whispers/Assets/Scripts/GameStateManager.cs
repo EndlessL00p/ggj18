@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Linq;
 
 //////////////////////////////////////////////////////////////////////////////////////////////
 // Note: For changing game states, in this project, it's only turning on/off the UI object. //
@@ -32,7 +33,10 @@ public class GameStateManager : MonoBehaviour
     void Awake()
     {
         gameStates = new List<BaseState>();
-        gameStates.Add(new SplashState() );
+        gameStates.Add(new SplashState());
+        gameStates.Add(new MainMenuState());
+        gameStates.Add(new MainGameState());
+        SwitchGameState(GameStateID.MainGame);
     }
 
     // Update is called once per frame
@@ -44,6 +48,33 @@ public class GameStateManager : MonoBehaviour
             //run current game state's update
             currGameState.Update();
         }
+
+        ///////////////////////////////////////////////////////////////////////////////
+        //This section is for setting up the shortcut keys for developers            //
+        //so the developer can enter each state easily without travers the gameloop  //
+                                                                                     //
+        if (Input.GetKeyDown(KeyCode.F1)) //Press F1 to enter Main Menu              //
+        {                                                                            //
+            SwitchGameState(GameStateID.Splash);                                     //
+            currGameState.Update();                                                  //
+        }                                                                            //
+                                                                                     //
+        if (Input.GetKeyDown(KeyCode.F2)) //Press F2 to enter Tutoriul               //
+        {                                                                            //
+            SwitchGameState(GameStateID.MainMenu);                                   //
+            currGameState.Update();                                                  //
+        }                                                                            //
+                                                                                     //
+        if (Input.GetKeyDown(KeyCode.F3)) //Press F2 to enter Tutoriul               //
+        {                                                                            //
+            SwitchGameState(GameStateID.MainGame);                                   //
+            currGameState.Update();                                                  //
+        }                                                                            //
+                                                                                     //
+        ///////////////////////////////////////////////////////////////////////////////
+
+
+
     }
 
     //function that can switch game state
@@ -106,10 +137,27 @@ public class SplashState :  BaseState
     }
 }
 
+public class MainMenuState : BaseState
+{
+    GameStateManager gm;
+
+    public MainMenuState()
+    {
+        stateID = GameStateID.MainMenu;
+    }
+
+    public override void Start()
+    {
+        base.Start();
+        Time.timeScale = 0;
+    }
+}
+
 public class MainGameState : BaseState
 {
     //get game manager
     GameStateManager gm;
+    List<Student> students;
 
     public MainGameState()
     {
@@ -119,12 +167,70 @@ public class MainGameState : BaseState
     public override void Start()
     {
         gm = GameObject.Find("GameManager").GetComponent<GameStateManager>();
+        students = GameObject.FindObjectsOfType<Student>().ToList();
     }
 
     public override void Update()
     {
-
+        UpdateInput();
         ShowLog();
+    }
+
+    public void UpdateInput()
+    {
+        Student currNoteHolder = null;
+        foreach (Student s in students)
+        {
+            if (s.IsHoldingNote)
+            {
+                currNoteHolder = s;
+                break;
+            }
+        }
+
+        if (currNoteHolder.IsEndStudent)
+        {
+            Debug.Log("Win");
+        }
+
+        if (Input.GetKeyUp(KeyCode.LeftArrow))
+        {
+            currNoteHolder.PassNote(PassDirection.LEFT);
+        }
+
+        if (Input.GetKeyUp(KeyCode.RightArrow))
+        {
+            currNoteHolder.PassNote(PassDirection.RIGHT);
+
+        }
+
+        if (Input.GetKeyUp(KeyCode.UpArrow))
+        {
+            currNoteHolder.PassNote(PassDirection.UP);
+        }
+
+        if (Input.GetKeyUp(KeyCode.DownArrow))
+        {
+            currNoteHolder.PassNote(PassDirection.DOWN);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+
+        }        
+    }
+
+    private bool CheckEndStudent()
+    {
+        foreach (Student s in students)
+        {
+            if (s.IsEndStudent == true && s.IsEndStudent == true)
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     //Display current sate in console
