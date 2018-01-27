@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public enum PassDirection
 {
@@ -25,17 +26,89 @@ public class Student : MonoBehaviour
     //public ArrayList<string> test;
     public List<ConnectedStudent> Students = new List<ConnectedStudent>();
 
-	// Use this for initialization
-	void Start ()
+
+    public bool isStartStudent;
+    public bool isEndStudent;
+
+    private bool isHoldingNote;
+
+    private GameObject noteObj;
+
+    // Use this for initialization
+    void Start ()
     {
-        //test = new ArrayList<string>();
+        noteObj = gameObject.transform.GetChild(0).gameObject;
+
+        if (isStartStudent == true && isEndStudent == false)
+        {
+            isHoldingNote = true;
+            noteObj.SetActive(true);
+        }
+        else
+        {
+            isHoldingNote = false;
+            noteObj.SetActive(false);
+        }
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
-		
+        if (isHoldingNote == true)
+        {
+            if (Input.GetKeyDown(KeyCode.LeftArrow))
+            {
+                Student s = GetConnectedStudent(PassDirection.LEFT);
+
+                if (s != null)
+                {
+
+
+                }
+            }
+
+            if (Input.GetKeyDown(KeyCode.RightArrow))
+            {
+
+            }
+
+            if (Input.GetKeyDown(KeyCode.UpArrow))
+            {
+
+            }
+
+            if (Input.GetKeyDown(KeyCode.DownArrow))
+            {
+
+            }
+
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+
+            }
+        }
+
 	}
+
+    public bool IsHoldingNote
+    {
+        get { return isHoldingNote; }
+    }
+
+    private Student GetConnectedStudent(PassDirection a_Direction)
+    {
+        //this.Students.Where(x => x.Direction == a_Direction).FirstOrDefault();
+
+        foreach(ConnectedStudent cs in this.Students)
+        {
+            if (cs.Direction == a_Direction)
+            {
+                return cs.Student.GetComponent<Student>();
+            }
+        }
+
+        return null;
+    }
 
     void OnDrawGizmosSelected()
     {
@@ -44,9 +117,9 @@ public class Student : MonoBehaviour
         {
             if (cs.Student != null)
             {
-                Vector3 dir = cs.Student.gameObject.transform.position - this.gameObject.transform.position;                
+                Vector3 dir = cs.Student.gameObject.transform.position - this.gameObject.transform.position;
                 Gizmos.DrawRay(this.gameObject.transform.position, dir);
             }
-        }        
+        }
     }
 }
