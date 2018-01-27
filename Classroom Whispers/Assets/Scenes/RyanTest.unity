@@ -3297,7 +3297,7 @@ Tilemap:
   - first: {x: -8, y: 4, z: 0}
     second:
       m_TileIndex: 18
-      m_TileSpriteIndex: 18
+      m_TileSpriteIndex: 28
       m_TileMatrixIndex: 0
       m_TileColorIndex: 28
       m_ObjectToInstantiate: {fileID: 0}
@@ -3963,7 +3963,7 @@ Tilemap:
   - first: {x: 9, y: 7, z: 0}
     second:
       m_TileIndex: 15
-      m_TileSpriteIndex: 15
+      m_TileSpriteIndex: 18
       m_TileMatrixIndex: 0
       m_TileColorIndex: 28
       m_ObjectToInstantiate: {fileID: 0}
@@ -4064,14 +4064,14 @@ Tilemap:
     m_Data: {fileID: 21300058, guid: b3738cc7e9e62e54da5d76b643518a43, type: 3}
   - m_RefCount: 4
     m_Data: {fileID: 21300048, guid: b3738cc7e9e62e54da5d76b643518a43, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: 21300004, guid: b3738cc7e9e62e54da5d76b643518a43, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 17
     m_Data: {fileID: 21300036, guid: b3738cc7e9e62e54da5d76b643518a43, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: 21300114, guid: b3738cc7e9e62e54da5d76b643518a43, type: 3}
   - m_RefCount: 1
-    m_Data: {fileID: 21300060, guid: b3738cc7e9e62e54da5d76b643518a43, type: 3}
+    m_Data: {fileID: 21300004, guid: b3738cc7e9e62e54da5d76b643518a43, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 21300056, guid: b3738cc7e9e62e54da5d76b643518a43, type: 3}
   - m_RefCount: 1
@@ -4090,8 +4090,8 @@ Tilemap:
     m_Data: {fileID: 21300054, guid: b3738cc7e9e62e54da5d76b643518a43, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 21300044, guid: b3738cc7e9e62e54da5d76b643518a43, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 21300060, guid: b3738cc7e9e62e54da5d76b643518a43, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: 21300022, guid: b3738cc7e9e62e54da5d76b643518a43, type: 3}
   - m_RefCount: 2
@@ -4916,6 +4916,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1874114751}
+  - component: {fileID: 1874114752}
   m_Layer: 0
   m_Name: Classroom
   m_TagString: Untagged
@@ -4937,6 +4938,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1874114752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1874114750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a4dd88adab4c3a46896327d06017873, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1878485546
 Prefab:
   m_ObjectHideFlags: 0

@@ -7,7 +7,8 @@ public enum PassDirection
     LEFT = 0,
     RIGHT,
     UP,
-    DOWN
+    DOWN,
+    NONE
 }
 
 [System.Serializable]
@@ -19,7 +20,7 @@ public class ConnectedStudent
 
 public class Student : MonoBehaviour
 {
-    private Vector3[] DirectionVectors = { Vector3.left, Vector3.right, Vector3.up, Vector3.down };
+    public static Vector3[] DirectionVectors = { Vector3.left, Vector3.right, Vector3.up, Vector3.down };
 
     //public ArrayList<string> test;
     public List<ConnectedStudent> Students = new List<ConnectedStudent>();
