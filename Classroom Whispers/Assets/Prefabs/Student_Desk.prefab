@@ -230,7 +230,7 @@ GameObject:
   - component: {fileID: 95998119091511672}
   - component: {fileID: 114071475301427618}
   m_Layer: 0
-  m_Name: Student
+  m_Name: C4_Student
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -327,8 +327,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1015237891747300}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2, y: -2.9363263, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4674808769302646}
@@ -507,6 +507,8 @@ MonoBehaviour:
   ArrowMinOffset: 0.5
   ArrowMaxOffset: 0.8
   ArrowPulseTime: 1
+  SmallArrowScale: 0.8
+  LargeArrowScale: 1
 --- !u!114 &114716424177654112
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -519,10 +521,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Students:
-  - Direction: 0
-    Student: {fileID: 0}
-  - Direction: 1
-    Student: {fileID: 0}
   - Direction: 2
     Student: {fileID: 0}
   - Direction: 3
@@ -609,7 +607,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 4
   m_Sprite: {fileID: 21300012, guid: b3738cc7e9e62e54da5d76b643518a43, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.5294118, b: 0.77254903, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -741,7 +739,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 4
   m_Sprite: {fileID: 21300010, guid: b3738cc7e9e62e54da5d76b643518a43, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.5294118, b: 0.77254903, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -829,7 +827,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 4
   m_Sprite: {fileID: 21300008, guid: b3738cc7e9e62e54da5d76b643518a43, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.5294118, b: 0.77254903, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1005,7 +1003,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 4
   m_Sprite: {fileID: 21300006, guid: b3738cc7e9e62e54da5d76b643518a43, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.5294118, b: 0.77254903, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

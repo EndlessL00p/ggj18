@@ -29,6 +29,11 @@ public class ClassroomEditor : Editor
             GenerateStudentLinks();            
         }
 
+		if (GUILayout.Button("Fix Student Names"))
+		{
+			FixStudentNames();
+		}
+
         if (GUILayout.Button("Randomize Student Appearances"))
         {
             RandomizeStudentAppearances();
@@ -44,8 +49,17 @@ public class ClassroomEditor : Editor
         }
     }
 
-    public static void RandomizeStudentAppearances()
-    {
+	private void FixStudentNames()
+	{
+		var students = GameObject.FindObjectsOfType<Student>();
+		foreach (var s in students)
+		{
+			s.gameObject.name = s.gameObject.transform.parent.gameObject.name + "_Student";
+			EditorUtility.SetDirty(s);
+		}
+	}
+    
+    public static void RandomizeStudentAppearances()    {
         var looks = GameObject.FindObjectsOfType<StudentLook>();
         foreach (var sl in looks)
         {

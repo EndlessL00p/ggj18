@@ -11,6 +11,8 @@ public class ContextSensitiveActionIndicators : MonoBehaviour {
     public float ArrowPulseTime = 1.4f;
     private float ArrowAnimTime = 0.0f;
     private float ArrowDir = 1.0f;
+    public float SmallArrowScale = 0.8f;
+    public float LargeArrowScale = 1.0f;
 
     bool HasPlayerFocus = false;
     bool[] ArrowsEnabled = { false, false, false, false };
@@ -65,8 +67,8 @@ public class ContextSensitiveActionIndicators : MonoBehaviour {
             for (int i = 0; i < 4; ++i)
             {
                 Vector3 scale = ArrowIndicators[i].transform.localScale;
-                scale.x = 0.4f;
-                scale.y = 0.4f;
+                scale.x = SmallArrowScale;
+                scale.y = SmallArrowScale;
                 ArrowIndicators[i].transform.localScale = scale;
                 ArrowIndicators[i].SetActive(ArrowsEnabled[i]);
 
@@ -87,8 +89,8 @@ public class ContextSensitiveActionIndicators : MonoBehaviour {
                 for (int i = 0; i < 4; ++i)
                 {
                     Vector3 scale = ArrowIndicators[i].transform.localScale;
-                    scale.x = 1.0f;
-                    scale.y = 1.0f;
+                    scale.x = LargeArrowScale;
+                    scale.y = LargeArrowScale;
                     ArrowIndicators[i].transform.localScale = scale;
 
                     ArrowIndicators[i].SetActive(ArrowsEnabled[i]);
