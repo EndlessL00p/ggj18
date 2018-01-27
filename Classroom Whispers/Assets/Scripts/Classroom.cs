@@ -28,6 +28,11 @@ public class ClassroomEditor : Editor
         {
             GenerateStudentLinks();            
         }
+
+        if (GUILayout.Button("Randomize Student Appearances"))
+        {
+            RandomizeStudentAppearances();
+        }
     }
 
     private void ResetStudentLinks()
@@ -36,6 +41,18 @@ public class ClassroomEditor : Editor
         foreach (var s in students)
         {
             s.Students.Clear();
+        }
+    }
+
+    private void RandomizeStudentAppearances()
+    {
+        var looks = GameObject.FindObjectsOfType<StudentLook>();
+        foreach (var sl in looks)
+        {
+            if (sl.MyStudent.IsEndStudent || sl.MyStudent.isStartStudent)
+                continue;
+
+            sl.RandomizeAppearance();            
         }
     }
 

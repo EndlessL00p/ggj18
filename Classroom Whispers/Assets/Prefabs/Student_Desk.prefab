@@ -228,6 +228,7 @@ GameObject:
   - component: {fileID: 4343599293472506}
   - component: {fileID: 114716424177654112}
   - component: {fileID: 95998119091511672}
+  - component: {fileID: 114071475301427618}
   m_Layer: 0
   m_Name: Student
   m_TagString: Untagged
@@ -477,6 +478,21 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114071475301427618
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1890310366342502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 856b911276b89a0428657baa89f0e189, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Hair: {fileID: 0}
+  Head: {fileID: 0}
+  Arm: {fileID: 0}
+  Face: {fileID: 0}
 --- !u!114 &114600461580826564
 MonoBehaviour:
   m_ObjectHideFlags: 1
