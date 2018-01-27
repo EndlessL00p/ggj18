@@ -64,7 +64,7 @@ public class ClassroomEditor : Editor
                     if (dist < dists[i])
                     {
                         dists[i] = dist;
-                        links[i] = s.gameObject;
+                        links[i] = t.gameObject;
                     }
                 }
             }
