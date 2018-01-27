@@ -7,8 +7,8 @@ public class Classroom : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
-	}
+        ClassroomEditor.RandomizeStudentAppearances();
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -44,7 +44,7 @@ public class ClassroomEditor : Editor
         }
     }
 
-    private void RandomizeStudentAppearances()
+    public static void RandomizeStudentAppearances()
     {
         var looks = GameObject.FindObjectsOfType<StudentLook>();
         foreach (var sl in looks)
