@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 5157aab8411dc724089131a00a4c3bce
+timeCreated: 1517018854
+licenseType: Pro
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: michelle digital handwritten
+  fontNames:
+  - michelle digital handwritten
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
