@@ -16,6 +16,7 @@ public class ContextSensitiveActionIndicators : MonoBehaviour {
 
     bool HasPlayerFocus = false;
     bool[] ArrowsEnabled = { false, false, false, false };
+    string[] ArrowIds = { "Arrow_L", "Arrow_R", "Arrow_U", "Arrow_D" };
     int ArrowSelected = -1;
 
     private Student student = null;    
@@ -38,7 +39,7 @@ public class ContextSensitiveActionIndicators : MonoBehaviour {
 
         for (int i=0; i < 4; ++i)
         {
-            ArrowIndicators[i] = gameObject.transform.GetChild(i).gameObject;
+            ArrowIndicators[i] = gameObject.transform.Find(ArrowIds[i]).gameObject;
         }
     }
 	
