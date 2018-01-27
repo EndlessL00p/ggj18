@@ -21,7 +21,7 @@ public class ConnectedStudent
 
 public class Student : MonoBehaviour
 {
-    private string[] PassAnimations = { "ReachLeft", "ReachRight", "ReachUp", "ReachBack" };
+    private string[] PassAnimations = { "ReachLeft", "ReachRight", "ReachUp", "ReachBack", "Idle" };
     private PassDirection[] OppositeDirection = { PassDirection.RIGHT, PassDirection.LEFT, PassDirection.DOWN, PassDirection.UP };
     public static Vector3[] DirectionVectors = { Vector3.left, Vector3.right, Vector3.up, Vector3.down };
 
@@ -35,7 +35,8 @@ public class Student : MonoBehaviour
 
     public GameObject NoteObject = null;
 
-    const float idleResetTimer = 1.0f;
+    string lastTrigger = "";
+    const float idleResetTimer = 0.5f;
     float animTimer = 0.0f;
 
     private Animator anim = null;
@@ -64,6 +65,8 @@ public class Student : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
+        anim.ResetTrigger("Idle");
+        
         if (isHoldingNote == true)
         {
             NoteObject.SetActive(true);
@@ -73,15 +76,20 @@ public class Student : MonoBehaviour
             NoteObject.SetActive(false);
         }
 
-        if (animTimer < 0)
+        if (animTimer > 0)
         {
+            animTimer -= Time.deltaTime;
+        }
+        else if (animTimer < 0)
+        {
+            if (lastTrigger != "")
+            {
+                anim.ResetTrigger(lastTrigger);
+                lastTrigger = "";
+            }
             anim.SetTrigger("Idle");
             animTimer = 0;
-        }
-        if (animTimer >= 0)
-        {
-            animTimer -= Time.deltaTime;            
-        }
+        }        
     }
 
 
@@ -126,11 +134,19 @@ public class Student : MonoBehaviour
 
     private void PlayPassAnimation(PassDirection a_Direction)
     {
+        if (lastTrigger != "")
+        {
+            anim.ResetTrigger(lastTrigger);
+            anim.SetTrigger("Idle"); // need to pass through idle
+            lastTrigger = "";
+        }
+
         int idir = (int)a_Direction;
         string animTrigger = PassAnimations[idir];
         
         anim.SetTrigger(animTrigger);
         animTimer = idleResetTimer;
+        lastTrigger = animTrigger;
     }
 
     //Get connected student
