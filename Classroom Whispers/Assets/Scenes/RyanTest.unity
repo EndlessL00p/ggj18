@@ -154,11 +154,36 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1802028120338090, guid: ea5d8f88b5533e64db88579619dafa99, type: 2}
       propertyPath: m_Name
-      value: Desk (12)
+      value: Desk_3_3
       objectReference: {fileID: 0}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[0].Student
+      value: 
+      objectReference: {fileID: 162641187}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[1].Student
+      value: 
+      objectReference: {fileID: 1163155114}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[2].Student
+      value: 
+      objectReference: {fileID: 502393627}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[3].Student
+      value: 
+      objectReference: {fileID: 1158678827}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ea5d8f88b5533e64db88579619dafa99, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &4742769 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1019839378279678, guid: ea5d8f88b5533e64db88579619dafa99,
+    type: 2}
+  m_PrefabInternal: {fileID: 4742768}
 --- !u!1001 &96462604
 Prefab:
   m_ObjectHideFlags: 0
@@ -200,11 +225,36 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1802028120338090, guid: ea5d8f88b5533e64db88579619dafa99, type: 2}
       propertyPath: m_Name
-      value: Desk (2)
+      value: Desk_2_2
       objectReference: {fileID: 0}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[0].Student
+      value: 
+      objectReference: {fileID: 661164895}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[1].Student
+      value: 
+      objectReference: {fileID: 502393627}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[2].Student
+      value: 
+      objectReference: {fileID: 755892859}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[3].Student
+      value: 
+      objectReference: {fileID: 162641187}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ea5d8f88b5533e64db88579619dafa99, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &96462605 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1019839378279678, guid: ea5d8f88b5533e64db88579619dafa99,
+    type: 2}
+  m_PrefabInternal: {fileID: 96462604}
 --- !u!1001 &150045827
 Prefab:
   m_ObjectHideFlags: 0
@@ -212,6 +262,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4687276699327544, guid: ea5d8f88b5533e64db88579619dafa99, type: 2}
       propertyPath: m_LocalPosition.x
       value: -4
@@ -246,11 +301,46 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1802028120338090, guid: ea5d8f88b5533e64db88579619dafa99, type: 2}
       propertyPath: m_Name
-      value: Desk (10)
+      value: Desk_3_1
       objectReference: {fileID: 0}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[3].Direction
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[0].Direction
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[2].Direction
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[2].Student
+      value: 
+      objectReference: {fileID: 689219520}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[0].Student
+      value: 
+      objectReference: {fileID: 661164895}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[1].Student
+      value: 
+      objectReference: {fileID: 162641187}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ea5d8f88b5533e64db88579619dafa99, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &150045828 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1019839378279678, guid: ea5d8f88b5533e64db88579619dafa99,
+    type: 2}
+  m_PrefabInternal: {fileID: 150045827}
 --- !u!1001 &162641186
 Prefab:
   m_ObjectHideFlags: 0
@@ -292,11 +382,36 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1802028120338090, guid: ea5d8f88b5533e64db88579619dafa99, type: 2}
       propertyPath: m_Name
-      value: Desk (14)
+      value: Desk_3_2
       objectReference: {fileID: 0}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[0].Student
+      value: 
+      objectReference: {fileID: 150045828}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[1].Student
+      value: 
+      objectReference: {fileID: 4742769}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[2].Student
+      value: 
+      objectReference: {fileID: 96462605}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[3].Student
+      value: 
+      objectReference: {fileID: 600865454}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ea5d8f88b5533e64db88579619dafa99, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &162641187 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1019839378279678, guid: ea5d8f88b5533e64db88579619dafa99,
+    type: 2}
+  m_PrefabInternal: {fileID: 162641186}
 --- !u!1001 &216869017
 Prefab:
   m_ObjectHideFlags: 0
@@ -304,6 +419,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4687276699327544, guid: ea5d8f88b5533e64db88579619dafa99, type: 2}
       propertyPath: m_LocalPosition.x
       value: 4
@@ -338,11 +458,46 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1802028120338090, guid: ea5d8f88b5533e64db88579619dafa99, type: 2}
       propertyPath: m_Name
-      value: Desk (11)
+      value: Desk_3_5
       objectReference: {fileID: 0}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[3].Direction
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[1].Direction
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[2].Direction
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[0].Student
+      value: 
+      objectReference: {fileID: 1163155114}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[1].Student
+      value: 
+      objectReference: {fileID: 494690134}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[2].Student
+      value: 
+      objectReference: {fileID: 878384746}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ea5d8f88b5533e64db88579619dafa99, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &216869018 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1019839378279678, guid: ea5d8f88b5533e64db88579619dafa99,
+    type: 2}
+  m_PrefabInternal: {fileID: 216869017}
 --- !u!1001 &417438519
 Prefab:
   m_ObjectHideFlags: 0
@@ -350,6 +505,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4687276699327544, guid: ea5d8f88b5533e64db88579619dafa99, type: 2}
       propertyPath: m_LocalPosition.x
       value: -4
@@ -384,11 +544,46 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1802028120338090, guid: ea5d8f88b5533e64db88579619dafa99, type: 2}
       propertyPath: m_Name
-      value: Desk (5)
+      value: Desk_1_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[2].Direction
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[3].Direction
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[1].Direction
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[0].Student
+      value: 
+      objectReference: {fileID: 755892859}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[1].Student
+      value: 
+      objectReference: {fileID: 661164895}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[0].Direction
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ea5d8f88b5533e64db88579619dafa99, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &417438520 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1019839378279678, guid: ea5d8f88b5533e64db88579619dafa99,
+    type: 2}
+  m_PrefabInternal: {fileID: 417438519}
 --- !u!1001 &494690133
 Prefab:
   m_ObjectHideFlags: 0
@@ -396,6 +591,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4687276699327544, guid: ea5d8f88b5533e64db88579619dafa99, type: 2}
       propertyPath: m_LocalPosition.x
       value: 4
@@ -430,11 +630,46 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1802028120338090, guid: ea5d8f88b5533e64db88579619dafa99, type: 2}
       propertyPath: m_Name
-      value: Desk (4)
+      value: Desk_2_5
       objectReference: {fileID: 0}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[3].Direction
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[1].Direction
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[2].Direction
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[0].Student
+      value: 
+      objectReference: {fileID: 1653114602}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[2].Student
+      value: 
+      objectReference: {fileID: 216869018}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[1].Student
+      value: 
+      objectReference: {fileID: 1878485547}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ea5d8f88b5533e64db88579619dafa99, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &494690134 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1019839378279678, guid: ea5d8f88b5533e64db88579619dafa99,
+    type: 2}
+  m_PrefabInternal: {fileID: 494690133}
 --- !u!1001 &502393626
 Prefab:
   m_ObjectHideFlags: 0
@@ -474,9 +709,38 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1802028120338090, guid: ea5d8f88b5533e64db88579619dafa99, type: 2}
+      propertyPath: m_Name
+      value: Desk_2_3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[1].Student
+      value: 
+      objectReference: {fileID: 1653114602}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[0].Student
+      value: 
+      objectReference: {fileID: 96462605}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[2].Student
+      value: 
+      objectReference: {fileID: 1284710070}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[3].Student
+      value: 
+      objectReference: {fileID: 4742769}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ea5d8f88b5533e64db88579619dafa99, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &502393627 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1019839378279678, guid: ea5d8f88b5533e64db88579619dafa99,
+    type: 2}
+  m_PrefabInternal: {fileID: 502393626}
 --- !u!1001 &600865453
 Prefab:
   m_ObjectHideFlags: 0
@@ -484,6 +748,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4687276699327544, guid: ea5d8f88b5533e64db88579619dafa99, type: 2}
       propertyPath: m_LocalPosition.x
       value: -2
@@ -518,8 +787,28 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1802028120338090, guid: ea5d8f88b5533e64db88579619dafa99, type: 2}
       propertyPath: m_Name
-      value: Desk (18)
+      value: Desk_4_2
       objectReference: {fileID: 0}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[3].Direction
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[0].Student
+      value: 
+      objectReference: {fileID: 1158678827}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[1].Student
+      value: 
+      objectReference: {fileID: 1158678827}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[2].Student
+      value: 
+      objectReference: {fileID: 162641187}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ea5d8f88b5533e64db88579619dafa99, type: 2}
   m_IsPrefabParent: 0
@@ -535,6 +824,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4687276699327544, guid: ea5d8f88b5533e64db88579619dafa99, type: 2}
       propertyPath: m_LocalPosition.x
       value: -4
@@ -569,11 +863,46 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1802028120338090, guid: ea5d8f88b5533e64db88579619dafa99, type: 2}
       propertyPath: m_Name
-      value: Desk (3)
+      value: Desk_2_1
       objectReference: {fileID: 0}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[3].Direction
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[1].Direction
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[2].Direction
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[0].Student
+      value: 
+      objectReference: {fileID: 96462605}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[1].Student
+      value: 
+      objectReference: {fileID: 417438520}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[2].Student
+      value: 
+      objectReference: {fileID: 150045828}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ea5d8f88b5533e64db88579619dafa99, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &661164895 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1019839378279678, guid: ea5d8f88b5533e64db88579619dafa99,
+    type: 2}
+  m_PrefabInternal: {fileID: 661164894}
 --- !u!1001 &689219519
 Prefab:
   m_ObjectHideFlags: 0
@@ -620,7 +949,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1802028120338090, guid: ea5d8f88b5533e64db88579619dafa99, type: 2}
       propertyPath: m_Name
-      value: Desk (15)
+      value: Desk_4_1
       objectReference: {fileID: 0}
     - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
         type: 2}
@@ -650,6 +979,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ea5d8f88b5533e64db88579619dafa99, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &689219520 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1019839378279678, guid: ea5d8f88b5533e64db88579619dafa99,
+    type: 2}
+  m_PrefabInternal: {fileID: 689219519}
 --- !u!1001 &755892858
 Prefab:
   m_ObjectHideFlags: 0
@@ -657,6 +991,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4687276699327544, guid: ea5d8f88b5533e64db88579619dafa99, type: 2}
       propertyPath: m_LocalPosition.x
       value: -2
@@ -691,11 +1030,41 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1802028120338090, guid: ea5d8f88b5533e64db88579619dafa99, type: 2}
       propertyPath: m_Name
-      value: Desk (8)
+      value: Desk_1_2
       objectReference: {fileID: 0}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[3].Direction
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[2].Direction
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[0].Student
+      value: 
+      objectReference: {fileID: 417438520}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[1].Student
+      value: 
+      objectReference: {fileID: 1284710070}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[2].Student
+      value: 
+      objectReference: {fileID: 661164895}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ea5d8f88b5533e64db88579619dafa99, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &755892859 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1019839378279678, guid: ea5d8f88b5533e64db88579619dafa99,
+    type: 2}
+  m_PrefabInternal: {fileID: 755892858}
 --- !u!1001 &878384745
 Prefab:
   m_ObjectHideFlags: 0
@@ -703,6 +1072,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4687276699327544, guid: ea5d8f88b5533e64db88579619dafa99, type: 2}
       propertyPath: m_LocalPosition.x
       value: 4
@@ -737,11 +1111,46 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1802028120338090, guid: ea5d8f88b5533e64db88579619dafa99, type: 2}
       propertyPath: m_Name
-      value: Desk (19)
+      value: Desk_4_5
       objectReference: {fileID: 0}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[2].Direction
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[3].Direction
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[0].Direction
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[1].Direction
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[0].Student
+      value: 
+      objectReference: {fileID: 1534258023}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[1].Student
+      value: 
+      objectReference: {fileID: 216869018}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ea5d8f88b5533e64db88579619dafa99, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &878384746 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1019839378279678, guid: ea5d8f88b5533e64db88579619dafa99,
+    type: 2}
+  m_PrefabInternal: {fileID: 878384745}
 --- !u!1001 &1158678826
 Prefab:
   m_ObjectHideFlags: 0
@@ -749,6 +1158,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4687276699327544, guid: ea5d8f88b5533e64db88579619dafa99, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -783,11 +1197,36 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1802028120338090, guid: ea5d8f88b5533e64db88579619dafa99, type: 2}
       propertyPath: m_Name
-      value: Desk (16)
+      value: Desk_4_3
       objectReference: {fileID: 0}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[3].Direction
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[0].Student
+      value: 
+      objectReference: {fileID: 600865454}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[1].Student
+      value: 
+      objectReference: {fileID: 1534258023}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[2].Student
+      value: 
+      objectReference: {fileID: 4742769}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ea5d8f88b5533e64db88579619dafa99, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1158678827 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1019839378279678, guid: ea5d8f88b5533e64db88579619dafa99,
+    type: 2}
+  m_PrefabInternal: {fileID: 1158678826}
 --- !u!1001 &1163155113
 Prefab:
   m_ObjectHideFlags: 0
@@ -829,11 +1268,36 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1802028120338090, guid: ea5d8f88b5533e64db88579619dafa99, type: 2}
       propertyPath: m_Name
-      value: Desk (13)
+      value: Desk_3_4
       objectReference: {fileID: 0}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[0].Student
+      value: 
+      objectReference: {fileID: 4742769}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[1].Student
+      value: 
+      objectReference: {fileID: 216869018}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[3].Student
+      value: 
+      objectReference: {fileID: 1534258023}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[2].Student
+      value: 
+      objectReference: {fileID: 1653114602}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ea5d8f88b5533e64db88579619dafa99, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1163155114 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1019839378279678, guid: ea5d8f88b5533e64db88579619dafa99,
+    type: 2}
+  m_PrefabInternal: {fileID: 1163155113}
 --- !u!1001 &1212305058
 Prefab:
   m_ObjectHideFlags: 0
@@ -841,6 +1305,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4687276699327544, guid: ea5d8f88b5533e64db88579619dafa99, type: 2}
       propertyPath: m_LocalPosition.x
       value: 2
@@ -875,11 +1344,41 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1802028120338090, guid: ea5d8f88b5533e64db88579619dafa99, type: 2}
       propertyPath: m_Name
-      value: Desk (7)
+      value: Desk_1_4
       objectReference: {fileID: 0}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[3].Direction
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[2].Direction
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[0].Student
+      value: 
+      objectReference: {fileID: 1284710070}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[1].Student
+      value: 
+      objectReference: {fileID: 1878485547}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[2].Student
+      value: 
+      objectReference: {fileID: 1653114602}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ea5d8f88b5533e64db88579619dafa99, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1212305059 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1019839378279678, guid: ea5d8f88b5533e64db88579619dafa99,
+    type: 2}
+  m_PrefabInternal: {fileID: 1212305058}
 --- !u!1001 &1284710069
 Prefab:
   m_ObjectHideFlags: 0
@@ -887,6 +1386,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4687276699327544, guid: ea5d8f88b5533e64db88579619dafa99, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -921,11 +1425,41 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1802028120338090, guid: ea5d8f88b5533e64db88579619dafa99, type: 2}
       propertyPath: m_Name
-      value: Desk (6)
+      value: Desk_1_3
       objectReference: {fileID: 0}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[3].Direction
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[2].Direction
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[0].Student
+      value: 
+      objectReference: {fileID: 755892859}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[1].Student
+      value: 
+      objectReference: {fileID: 1212305059}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[2].Student
+      value: 
+      objectReference: {fileID: 502393627}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ea5d8f88b5533e64db88579619dafa99, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1284710070 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1019839378279678, guid: ea5d8f88b5533e64db88579619dafa99,
+    type: 2}
+  m_PrefabInternal: {fileID: 1284710069}
 --- !u!1 &1291130917
 GameObject:
   m_ObjectHideFlags: 0
@@ -1079,6 +1613,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4687276699327544, guid: ea5d8f88b5533e64db88579619dafa99, type: 2}
       propertyPath: m_LocalPosition.x
       value: 2
@@ -1113,11 +1652,36 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1802028120338090, guid: ea5d8f88b5533e64db88579619dafa99, type: 2}
       propertyPath: m_Name
-      value: Desk (17)
+      value: Desk_4_4
       objectReference: {fileID: 0}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[3].Direction
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[1].Student
+      value: 
+      objectReference: {fileID: 878384746}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[0].Student
+      value: 
+      objectReference: {fileID: 1158678827}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[2].Student
+      value: 
+      objectReference: {fileID: 1163155114}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ea5d8f88b5533e64db88579619dafa99, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1534258023 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1019839378279678, guid: ea5d8f88b5533e64db88579619dafa99,
+    type: 2}
+  m_PrefabInternal: {fileID: 1534258022}
 --- !u!1001 &1568864760
 Prefab:
   m_ObjectHideFlags: 0
@@ -1201,11 +1765,36 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1802028120338090, guid: ea5d8f88b5533e64db88579619dafa99, type: 2}
       propertyPath: m_Name
-      value: Desk (1)
+      value: Desk_2_4
       objectReference: {fileID: 0}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[0].Student
+      value: 
+      objectReference: {fileID: 502393627}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[1].Student
+      value: 
+      objectReference: {fileID: 494690134}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[2].Student
+      value: 
+      objectReference: {fileID: 1212305059}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[3].Student
+      value: 
+      objectReference: {fileID: 162641187}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ea5d8f88b5533e64db88579619dafa99, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1653114602 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1019839378279678, guid: ea5d8f88b5533e64db88579619dafa99,
+    type: 2}
+  m_PrefabInternal: {fileID: 1653114601}
 --- !u!1001 &1878485546
 Prefab:
   m_ObjectHideFlags: 0
@@ -1213,6 +1802,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4687276699327544, guid: ea5d8f88b5533e64db88579619dafa99, type: 2}
       propertyPath: m_LocalPosition.x
       value: 4
@@ -1247,8 +1841,38 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1802028120338090, guid: ea5d8f88b5533e64db88579619dafa99, type: 2}
       propertyPath: m_Name
-      value: Desk (9)
+      value: Desk_1_5
       objectReference: {fileID: 0}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[2].Direction
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[3].Direction
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[1].Direction
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[0].Student
+      value: 
+      objectReference: {fileID: 1212305059}
+    - target: {fileID: 114810912286771376, guid: ea5d8f88b5533e64db88579619dafa99,
+        type: 2}
+      propertyPath: Students.Array.data[1].Student
+      value: 
+      objectReference: {fileID: 494690134}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ea5d8f88b5533e64db88579619dafa99, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1878485547 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1019839378279678, guid: ea5d8f88b5533e64db88579619dafa99,
+    type: 2}
+  m_PrefabInternal: {fileID: 1878485546}
