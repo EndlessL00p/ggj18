@@ -41,10 +41,13 @@ public class Student : MonoBehaviour
 
     private Animator anim = null;
 
+    private ContextSensitiveActionIndicators indicators = null;
+
     // Use this for initialization
     void Start ()
     {
         anim = GetComponent<Animator>();
+        indicators = gameObject.FindNeareastComponentInHierarchy<ContextSensitiveActionIndicators>();
 
         NoteObject = gameObject.transform.GetChild(1).gameObject; // todo rewrite
         if (NoteObject != null)
@@ -69,7 +72,7 @@ public class Student : MonoBehaviour
         
         if (isHoldingNote == true)
         {
-            NoteObject.SetActive(true);
+            NoteObject.SetActive(true);            
         }
         else
         {
@@ -122,6 +125,8 @@ public class Student : MonoBehaviour
             PlayPassAnimation(a_Direction);
             isHoldingNote = false;
             s.RecieveNote(this, a_Direction);
+
+            indicators.SetEnabled(false);
         }
     }
 
@@ -130,6 +135,8 @@ public class Student : MonoBehaviour
         PassDirection oppDir = OppositeDirection[(int)a_Direction];
         PlayPassAnimation(oppDir);
         IsHoldingNote = true;
+
+        indicators.SetEnabled(true);
     }
 
     private void PlayPassAnimation(PassDirection a_Direction)
@@ -176,4 +183,33 @@ public class Student : MonoBehaviour
             }
         }
     }
+    
 }
+
+public static class GameObjectExtensions
+{
+    public static T FindNeareastComponentInHierarchy<T>(this GameObject obj) where T: MonoBehaviour
+    {
+        Transform target = obj.transform;
+        while (target != null)
+        {
+            T s = target.GetComponentInChildren<T>();
+            if (s != null)
+            {
+                return s;
+            }
+
+            if (target != obj.transform.root)
+            {
+                target = target.parent;
+            }
+            else
+            {
+                break;
+            }
+        }
+
+        return default(T);
+    }
+}
+
