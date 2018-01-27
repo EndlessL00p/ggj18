@@ -105,3 +105,31 @@ public class SplashState :  BaseState
         Debug.Log("This is Splash Screen");
     }
 }
+
+public class MainGameState : BaseState
+{
+    //get game manager
+    GameStateManager gm;
+
+    public MainGameState()
+    {
+        stateID = GameStateID.MainGame;
+    }
+
+    public override void Start()
+    {
+        gm = GameObject.Find("GameManager").GetComponent<GameStateManager>();
+    }
+
+    public override void Update()
+    {
+
+        ShowLog();
+    }
+
+    //Display current sate in console
+    private void ShowLog()
+    {
+        Debug.Log("This is Main Game State");
+    }
+}

@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 28a9431433e08c7448b3707bb3befc4f
 timeCreated: 1517018151
+=======
+guid: 19ad5ae4e358ec348b4ae113a26ee90c
+timeCreated: 1517018854
+>>>>>>> 9a3b263e30f7b8656f3b765bd8aaadf8e63a629a
 licenseType: Pro
 TrueTypeFontImporter:
   externalObjects: {}
@@ -10,8 +15,14 @@ TrueTypeFontImporter:
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
+<<<<<<< HEAD
   fontName: 
   fontNames: []
+=======
+  fontName: Pixeled
+  fontNames:
+  - Pixeled
+>>>>>>> 9a3b263e30f7b8656f3b765bd8aaadf8e63a629a
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

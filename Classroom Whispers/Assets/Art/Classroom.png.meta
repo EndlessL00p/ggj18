@@ -1,4 +1,5 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: b3738cc7e9e62e54da5d76b643518a43
 timeCreated: 1517018915
 licenseType: Pro
@@ -64,6 +65,13 @@ TextureImporter:
     21300114: CR_WallBoard_CenterBottom
     21300116: Classroom_0
     21300118: Char_Torso_ReachSide
+=======
+guid: 4a49e2f9766f1084c95538ca19d8084e
+timeCreated: 1517011896
+licenseType: Pro
+TextureImporter:
+  fileIDToRecycleName: {}
+>>>>>>> 9a3b263e30f7b8656f3b765bd8aaadf8e63a629a
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -100,13 +108,13 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 128
+  spritePixelsToUnits: 100
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -126,18 +134,9 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - buildTarget: Standalone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
+<<<<<<< HEAD
     sprites:
     - serializedVersion: 2
       name: CR_WallEdge_TopLeft
@@ -979,6 +978,9 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+=======
+    sprites: []
+>>>>>>> 9a3b263e30f7b8656f3b765bd8aaadf8e63a629a
     outline: []
     physicsShape: []
   spritePackingTag: 
