@@ -13,8 +13,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Teacher
+  - Students
   - 
   - 
   - 
@@ -38,15 +38,18 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 376844243
+    locked: 0
+  - name: Midground
+    uniqueID: 2958488009
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
   - name: Foreground
     uniqueID: 1543943175
     locked: 0
-  - name: Background
-    uniqueID: 376844243
-    locked: 0
-  - name: Midground
-    uniqueID: 2958488009
+  - name: Student
+    uniqueID: 1517741343
     locked: 0
