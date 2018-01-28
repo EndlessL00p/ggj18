@@ -15,9 +15,11 @@ public class LookDatabase : MonoBehaviour {
     public List<SkinSet> SkinTypes = new List<SkinSet>();
     public List<Sprite> ShortHair = new List<Sprite>();
     public List<Sprite> LongHair = new List<Sprite>();
+    public List<Sprite> TeacherHair = new List<Sprite>();
+    public List<Sprite> TeacherFace = new List<Sprite>();
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
@@ -42,5 +44,16 @@ public class LookDatabase : MonoBehaviour {
 
         int i = Random.RandomRange(0, hairset.Count);
         return hairset[i];
+    }
+    public Sprite GetRandomTeacherHair()
+    {
+        int i = Random.RandomRange(0, TeacherHair.Count);
+        return TeacherHair[i];
+    }
+
+    public Sprite GetRandomTeacherFace()
+    {
+        int i = Random.RandomRange(0, TeacherFace.Count);
+        return TeacherFace[i];
     }
 }

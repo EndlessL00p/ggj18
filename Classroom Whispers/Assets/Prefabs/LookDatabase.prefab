@@ -34,7 +34,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1578994569878490}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.02755542, y: 0.059081025, z: 0.062458612}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -65,12 +65,20 @@ MonoBehaviour:
     HeadFace: {fileID: 21300098, guid: b3738cc7e9e62e54da5d76b643518a43, type: 3}
     Arm: {fileID: 21300110, guid: b3738cc7e9e62e54da5d76b643518a43, type: 3}
   ShortHair:
-  - {fileID: 21300078, guid: b3738cc7e9e62e54da5d76b643518a43, type: 3}
-  - {fileID: 21300084, guid: b3738cc7e9e62e54da5d76b643518a43, type: 3}
   - {fileID: 21300100, guid: b3738cc7e9e62e54da5d76b643518a43, type: 3}
+  - {fileID: 21300084, guid: b3738cc7e9e62e54da5d76b643518a43, type: 3}
   - {fileID: 21300094, guid: b3738cc7e9e62e54da5d76b643518a43, type: 3}
+  - {fileID: 21300078, guid: b3738cc7e9e62e54da5d76b643518a43, type: 3}
   LongHair:
   - {fileID: 21300080, guid: b3738cc7e9e62e54da5d76b643518a43, type: 3}
-  - {fileID: 21300086, guid: b3738cc7e9e62e54da5d76b643518a43, type: 3}
   - {fileID: 21300102, guid: b3738cc7e9e62e54da5d76b643518a43, type: 3}
+  - {fileID: 21300086, guid: b3738cc7e9e62e54da5d76b643518a43, type: 3}
   - {fileID: 21300096, guid: b3738cc7e9e62e54da5d76b643518a43, type: 3}
+  TeacherHair:
+  - {fileID: 21300132, guid: b3738cc7e9e62e54da5d76b643518a43, type: 3}
+  - {fileID: 21300134, guid: b3738cc7e9e62e54da5d76b643518a43, type: 3}
+  TeacherFace:
+  - {fileID: 21300120, guid: b3738cc7e9e62e54da5d76b643518a43, type: 3}
+  - {fileID: 21300122, guid: b3738cc7e9e62e54da5d76b643518a43, type: 3}
+  - {fileID: 21300124, guid: b3738cc7e9e62e54da5d76b643518a43, type: 3}
+  - {fileID: 21300126, guid: b3738cc7e9e62e54da5d76b643518a43, type: 3}
