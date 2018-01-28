@@ -472,3 +472,14 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 0dab322b1f38ba94daf9ea6064cc2b08, type: 3}
     - {fileID: 8300000, guid: a6e7f88752b52784da21a86184b3bb29, type: 3}
     - {fileID: 8300000, guid: 76b51916ac951134ca6935f5a91720e8, type: 3}
+  - SFXName: Teacher
+    Clips:
+    - {fileID: 8300000, guid: aac7608f0bc7ece4890f318bc8ff472c, type: 3}
+    - {fileID: 8300000, guid: eca9c9761501884468a2ac647ae8a2ab, type: 3}
+    - {fileID: 8300000, guid: f2b3103a63dbdff49b9055abef61df62, type: 3}
+  RepeatingAmbients:
+  - AmbientName: Teacher
+    SFXName: Teacher
+    MinTimePeriod: 4
+    MaxTimePeriod: 10
+    PlayLimit: 0
