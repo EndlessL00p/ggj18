@@ -52,3 +52,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiObjList: []
+  Levels:
+  - LV0
+  - LV1
+  - LV2
+  - LV3
+  - LV4
