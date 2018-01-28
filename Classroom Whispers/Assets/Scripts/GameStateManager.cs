@@ -37,6 +37,10 @@ public class GameStateManager : MonoBehaviour
     // Use this for initialization
     void Awake()
     {
+        Debug.Log("GameStateManager.Awake");
+        string currentScene = SceneManager.GetActiveScene().name;
+        Debug.Log(String.Format("Current Scene is {0}", currentScene));
+
         gameStates = new List<BaseState>();
         gameStates.Add(new SplashState());
         gameStates.Add(new MainMenuState());
@@ -49,9 +53,12 @@ public class GameStateManager : MonoBehaviour
         ingameUI = GameObject.Find("IngameUI");
         pauseUI = GameObject.Find("PauseUI");
         winUI = GameObject.Find("WinUI");
-        uiObjList.Add(ingameUI);
-        uiObjList.Add(pauseUI);
-        uiObjList.Add(winUI);
+        //if (ingameUI != null && pauseUI != null && winUI != null)
+        //{
+            uiObjList.Add(ingameUI);
+            uiObjList.Add(pauseUI);
+            uiObjList.Add(winUI);
+        //}        
 
         SwitchGameState(GameStateID.Gameplay);
     }
@@ -112,6 +119,8 @@ public class SplashState :  BaseState
 
     public override void Start()
     {
+        Debug.Log("SplashState.Start");
+
         gm = GameObject.Find("GameManager").GetComponent<GameStateManager>();
         gm.uiObjList[0].SetActive(true); //switch on ingameUI
         gm.uiObjList[1].SetActive(false);
@@ -126,7 +135,7 @@ public class SplashState :  BaseState
     //Display current sate in console
     private void ShowLog()
     {
-        Debug.Log("This is Splash Screen");
+        //Debug.Log("This is Splash Screen");
     }
 }
 
@@ -141,6 +150,8 @@ public class MainMenuState : BaseState
 
     public override void Start()
     {
+        Debug.Log("MenuMenuState.Start");
+
         gm.uiObjList[0].SetActive(true); //switch on ingameUI
         gm.uiObjList[1].SetActive(false);
         gm.uiObjList[2].SetActive(false);
@@ -153,7 +164,7 @@ public class MainMenuState : BaseState
 
     private void ShowLog()
     {
-        Debug.Log("This is Main Menu");
+        //Debug.Log("This is Main Menu");
     }
 }
 
@@ -244,12 +255,17 @@ public class GameplayState : BaseState
     }
 
     public override void Start()
-    {        
+    {
+        Debug.Log("GameplayState.Start");
+
         gm = GameObject.Find("GameManager").GetComponent<GameStateManager>();
         students = GameObject.FindObjectsOfType<Student>().ToList();
-        gm.uiObjList[0].SetActive(true); //switch on ingameUI
-        gm.uiObjList[1].SetActive(false);
-        gm.uiObjList[2].SetActive(false);
+        if (gm.uiObjList != null && gm.uiObjList.Count > 0)
+        {
+            gm.uiObjList[0].SetActive(true); //switch on ingameUI
+            gm.uiObjList[1].SetActive(false);
+            gm.uiObjList[2].SetActive(false);
+        }        
     }
 
     public override void Update()
@@ -270,7 +286,7 @@ public class GameplayState : BaseState
             }
         }
 
-        if (gm.uiObjList[1].activeInHierarchy == false && gm.uiObjList[1].activeInHierarchy == false)
+        if (gm.uiObjList[1] != null && gm.uiObjList[1].activeInHierarchy == false && gm.uiObjList[1].activeInHierarchy == false)
         {
             if (Input.GetKeyUp(KeyCode.LeftArrow))
             {
@@ -314,7 +330,7 @@ public class GameplayState : BaseState
             }
         }
 
-        if (gm.uiObjList[1].activeInHierarchy == true) //resume
+        if (gm.uiObjList[1] != null && gm.uiObjList[1].activeInHierarchy == true) //resume
         {
             if (Input.GetKeyDown(KeyCode.Escape))
             {
@@ -327,7 +343,7 @@ public class GameplayState : BaseState
             }
         }
 
-        if (gm.uiObjList[2].activeInHierarchy == true)
+        if (gm.uiObjList[2] != null && gm.uiObjList[2].activeInHierarchy == true)
         {
             if (Input.GetKeyDown(KeyCode.Escape)) //main menu
             {
@@ -385,7 +401,7 @@ public class GameplayState : BaseState
     //Display current sate in console
     private void ShowLog()
     {
-        Debug.Log("This is Main Game State");
+        //Debug.Log("This is Main Game State");
     }
 
 }
