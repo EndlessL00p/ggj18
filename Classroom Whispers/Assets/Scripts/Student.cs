@@ -128,6 +128,8 @@ public class Student : MonoBehaviour
             s.RecieveNote(this, a_Direction);
 
             indicators.SetHasPlayerFocus(false);
+
+            AudioManager.Instance.PlayActionSFX("PassNote");
         }
     }
 
@@ -138,7 +140,7 @@ public class Student : MonoBehaviour
         IsHoldingNote = true;
 
         indicators.SetHasPlayerFocus(true);
-    }
+    }    
 
     private void PlayPassAnimation(PassDirection a_Direction)
     {
