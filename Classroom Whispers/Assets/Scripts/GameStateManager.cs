@@ -43,12 +43,11 @@ public class GameStateManager : MonoBehaviour
 
         gameStates = new List<BaseState>();
         gameStates.Add(new SplashState());
-        gameStates.Add(new MainMenuState());
-        //gameStates.Add(new PauseState());
+        gameStates.Add(new MainMenuState());        
         gameStates.Add(new GameplayState());
-        
-        //gameStates.Add(new WinState());
-        
+        gameStates.Add(new PauseState());
+        gameStates.Add(new WinState());
+
         uiObjList = new List<GameObject>();
         ingameUI = GameObject.Find("IngameUI");
         pauseUI = GameObject.Find("PauseUI");
@@ -96,6 +95,73 @@ public class GameStateManager : MonoBehaviour
 
         //Start current state
         currGameState.Start();
+    }
+
+    public void NextLevelClicked()
+    {
+        Debug.Log("Next Level clicked");
+        LoadNextScene();
+    }
+
+    public void PrevLevelClicked()
+    {
+        Debug.Log("Prev Level clicked");
+        LoadPrevScene();
+    }
+
+    public void PauseClicked()
+    {
+        Debug.Log("Paused clicked");
+        SwitchGameState(GameStateID.Pause);
+    }
+
+    public void ResumeClicked()
+    {
+        Debug.Log("Resume clicked");
+        SwitchGameState(GameStateID.Gameplay);
+    }
+
+    public void QuitClicked()
+    {
+        Debug.Log("Quit clicked");
+        Application.Quit();
+    }
+
+    public void LoadNextScene()
+    {
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        int cnt = Levels.Length;
+        for (int i = 0; i < cnt; ++i)
+        {
+            string sceneName = Levels[i];
+            if (sceneName == currentSceneName && i < (cnt - 1))
+            {
+                string nextSceneName = Levels[i + 1];
+                SceneManager.LoadScene(nextSceneName);
+                return;
+            }
+        }
+    }
+
+    public void LoadPrevScene()
+    {
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        int cnt = Levels.Length;
+        for (int i = 0; i < cnt; ++i)
+        {
+            string sceneName = Levels[i];
+            if (sceneName == currentSceneName && i >= 1)
+            {
+                string nextSceneName = Levels[i - 1];
+                SceneManager.LoadScene(nextSceneName);
+                return;
+            }
+        }
+    }
+
+    public void ReloadCurrentScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
 
@@ -168,81 +234,91 @@ public class MainMenuState : BaseState
     }
 }
 
-//public class PauseState : BaseState
-//{
-//    GameStateManager gm;
+public class PauseState : BaseState
+{
+    GameStateManager gm;
 
-//    public PauseState()
-//    {
-//        stateID = GameStateID.PauseMenu;
-//    }
+    public PauseState()
+    {
+        stateID = GameStateID.Pause;
+    }
 
-//    public override void Start()
-//    {
-//        //get game manager
-//        gm = GameObject.Find("GameManager").GetComponent<GameStateManager>();
-//        //set the index[1] object (Pause) in UI list to active
-//        gm.uiObjList[1].SetActive(true);
-//        //pause the time
-//    }
+    public override void Start()
+    {
+        Debug.Log("PauseState.Start");
 
-//    public override void Update()
-//    {
-//        //Display current sate in console
-//        ShowLog();
-//    }
+        //get game manager
+        gm = GameObject.Find("GameManager").GetComponent<GameStateManager>();        
+        if (gm.uiObjList != null && gm.uiObjList.Count > 0)
+        {
+            gm.uiObjList[0].SetActive(false); 
+            gm.uiObjList[1].SetActive(true); //switch on pauseUI
+            gm.uiObjList[2].SetActive(false);
+        }
+    }
 
-//    public override void Shutdown()
-//    {
-//        //set current inactive when shutdown
-//        gm.uiObjList[1].SetActive(false);
-//    }
+    public override void Update()
+    {
+        //Display current sate in console
+        //ShowLog();
+    }
 
-//    //Display current sate in console
-//    private void ShowLog()
-//    {
-//        Debug.Log("This is Pause Menu");
-//    }
-//}
+    public override void Shutdown()
+    {
+        //set current inactive when shutdown
+        gm.uiObjList[1].SetActive(false);
+    }
 
-//public class WinState : BaseState
-//{
-//    GameStateManager gm;
+    //Display current sate in console
+    private void ShowLog()
+    {
+        Debug.Log("This is Pause Menu");
+    }
+}
 
-//    public WinState()
-//    {
-//        stateID = GameStateID.Win;
-//    }
+public class WinState : BaseState
+{
+    GameStateManager gm;
 
-//    public override void Start()
-//    {
-//        //get game manager
-//        gm = GameObject.Find("GameManager").GetComponent<GameStateManager>();
-//        //set the index[1] object (Pause) in UI list to active
-//        gm.uiObjList[2].SetActive(true);
-//        //pause the time
+    public WinState()
+    {
+        stateID = GameStateID.Win;
+    }
 
-//    }
+    public override void Start()
+    {
+        Debug.Log("WinState.Start");
 
-//    public override void Update()
-//    {
-//        //Display current sate in console
-//        ShowLog();
+        //get game manager
+        gm = GameObject.Find("GameManager").GetComponent<GameStateManager>();        
+        if (gm.uiObjList != null && gm.uiObjList.Count > 0)
+        {
+            gm.uiObjList[0].SetActive(false); 
+            gm.uiObjList[1].SetActive(false);
+            gm.uiObjList[2].SetActive(true); //switch on WinUI 
+        }
 
-//    }
+    }
 
-//    public override void Shutdown()
-//    {
-//        //set current inactive when shutdown
-//        gm.uiObjList[2].SetActive(false);
-//    }
+    public override void Update()
+    {
+        //Display current sate in console
+        //ShowLog();
 
-//    //Display current sate in console
-//    private void ShowLog()
-//    {
-//        Debug.Log("This is Pause Menu");
-//    }
-//}
+    }
+
+    public override void Shutdown()
+    {
+        //set current inactive when shutdown
+        gm.uiObjList[2].SetActive(false);
+    }
+
+    //Display current sate in console
+    private void ShowLog()
+    {
+        
+    }
+}
 
 public class GameplayState : BaseState
 {
@@ -316,17 +392,17 @@ public class GameplayState : BaseState
 
             if (Input.GetKeyDown(KeyCode.X)) //prev stage
             {
-
+                gm.PrevLevelClicked();
             }
 
             if (Input.GetKeyDown(KeyCode.C)) //next stage
             {
-                LoadNextScene();
+                gm.NextLevelClicked();
             }
 
             if (Input.GetKeyDown(KeyCode.Z)) //reload
             {
-                ReloadCurrentScene();
+                gm.ReloadCurrentScene();
             }
         }
 
@@ -339,7 +415,7 @@ public class GameplayState : BaseState
 
             if (Input.GetKeyDown(KeyCode.Z)) //reload
             {
-                ReloadCurrentScene();
+                gm.ReloadCurrentScene();
             }
         }
 
@@ -352,46 +428,27 @@ public class GameplayState : BaseState
 
             if (Input.GetKeyDown(KeyCode.Z)) //reload
             {
-                ReloadCurrentScene();
+                gm.ReloadCurrentScene();
             }
 
             if (Input.GetKeyDown(KeyCode.X)) // prev stage
             {
-
+                gm.PrevLevelClicked();
             }
 
             if (Input.GetKeyDown(KeyCode.C)) // next stage
             {
-                LoadNextScene();
+                gm.NextLevelClicked();
             }
         }
 
         if (currNoteHolder.IsEndStudent)
         {
-            gm.uiObjList[2].SetActive(true);
+            gm.SwitchGameState(GameStateID.Win);            
         }
     }
 
-    public void LoadNextScene()
-    {
-        string currentSceneName = SceneManager.GetActiveScene().name;
-        int cnt = gm.Levels.Length;
-        for (int i=0; i < cnt; ++i)
-        {
-            string sceneName = gm.Levels[i];
-            if (sceneName == currentSceneName && i < (cnt - 1))
-            {
-                string nextSceneName = gm.Levels[i+1];
-                SceneManager.LoadScene(nextSceneName);
-                return;
-            }
-        }        
-    }
-
-    public void ReloadCurrentScene()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
+    
 
     public override void Shutdown()
     {

@@ -7,6 +7,8 @@ public enum GameStateID
     Splash,
     MainMenu,
     Gameplay,
+    Pause,
+    Win
 }
 
 public abstract class BaseState
