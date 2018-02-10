@@ -25,17 +25,21 @@ public class CharacterCustomizer : MonoBehaviour
     private int _GlassesIdx = 0;
 
     // Use this for initialization
-    void Start () {        
-        _Head = gameObject.transform.Find("Customisation_Rig/UI_Char_Torso").GetComponent<Image>();
+    void Start()
+    {
+        _Head = gameObject.transform.Find("Customisation_Rig/UI_Char_Head").GetComponent<Image>();
         _Face = gameObject.transform.Find("Customisation_Rig/UI_Char_Face").GetComponent<Image>();
         _Fringe = gameObject.transform.Find("Customisation_Rig/UI_Char_Fringe").GetComponent<Image>();
         _Glasses = gameObject.transform.Find("Customisation_Rig/UI_Char_Glasses").GetComponent<Image>();
+
+        LoadPrefs();
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
 
     // Handles wrapping negative indexes around the end of the list
     private int NextIndex(int i, int cnt)
@@ -43,14 +47,37 @@ public class CharacterCustomizer : MonoBehaviour
         return (i % cnt + cnt) % cnt;
     }
 
+    public void SavePrefs()
+    {
+        UnityEngine.PlayerPrefs.SetInt(string.Format("Custom_Head{0}", (int)Type), _HeadIdx);
+        UnityEngine.PlayerPrefs.SetInt(string.Format("Custom_Face{0}", (int)Type), _FaceIdx);
+        UnityEngine.PlayerPrefs.SetInt(string.Format("Custom_Fringe{0}", (int)Type), _FringeIdx);
+        UnityEngine.PlayerPrefs.SetInt(string.Format("Custom_Glasses{0}", (int)Type), _GlassesIdx);
+    }
+
+    private void LoadPrefs()
+    {
+        _HeadIdx = UnityEngine.PlayerPrefs.GetInt(string.Format("Custom_Head{0}", (int)Type));
+        _FaceIdx = UnityEngine.PlayerPrefs.GetInt(string.Format("Custom_Face{0}", (int)Type));
+        _FringeIdx = UnityEngine.PlayerPrefs.GetInt(string.Format("Custom_Fringe{0}", (int)Type));
+        _GlassesIdx = UnityEngine.PlayerPrefs.GetInt(string.Format("Custom_Glasses{0}", (int)Type));
+
+        SetFringe(_FringeIdx);
+        SetSkin(_HeadIdx);
+        SetFace(_FaceIdx);
+        SetGlasses(_GlassesIdx);
+    }
+
     public void NextHair()
     {
         SetFringe(_FringeIdx + 1);
+        SavePrefs();
     }
 
     public void PrevHair()
     {
         SetFringe(_FringeIdx - 1);
+        SavePrefs();
     }
 
     private void SetFringe(int i)
@@ -60,17 +87,19 @@ public class CharacterCustomizer : MonoBehaviour
         _FringeIdx = NextIndex(i, cnt);
         var hair = db.HairTypes[_FringeIdx];
 
-        _Fringe.sprite = hair.Fringe;
+        _Fringe.sprite = hair.Fringe;        
     }
 
     public void NextSkin()
     {
         SetFringe(_HeadIdx + 1);
+        SavePrefs();
     }
 
     public void PrevSkin()
     {
         SetFringe(_HeadIdx - 1);
+        SavePrefs();
     }
 
     private void SetSkin(int i)
@@ -80,17 +109,19 @@ public class CharacterCustomizer : MonoBehaviour
         _HeadIdx = NextIndex(i, cnt);
         var skin = db.SkinTypes[_HeadIdx];
 
-        _Head.sprite = skin.HeadFace;
+        _Head.sprite = skin.HeadFace;        
     }
 
     public void NextFace()
     {
         SetFace(_FaceIdx + 1);
+        SavePrefs();
     }
 
     public void PrevFace()
     {
         SetFace(_FaceIdx - 1);
+        SavePrefs();
     }
 
     private void SetFace(int i)
@@ -105,10 +136,22 @@ public class CharacterCustomizer : MonoBehaviour
 
     public void NextGlasses()
     {
+        SetGlasses(_GlassesIdx + 1);
+        SavePrefs();
+    }
+
+    public void PrevGlasses()
+    {
+        SetGlasses(_GlassesIdx - 1);
+        SavePrefs();
+    }
+
+    private void SetGlasses(int i)
+    {
         LookDatabase db = GameObject.FindObjectOfType<LookDatabase>();
-        int cnt = db.Glasses.Count+1;
-        _GlassesIdx = NextIndex(_GlassesIdx+1, cnt);
-        
+        int cnt = db.Glasses.Count + 1;
+        _GlassesIdx = NextIndex(i, cnt);
+
         if (_GlassesIdx == (cnt - 1))
         {
             _Glasses.gameObject.SetActive(false);
@@ -118,6 +161,6 @@ public class CharacterCustomizer : MonoBehaviour
             var face = db.Glasses[_GlassesIdx];
             _Glasses.sprite = face;
             _Glasses.gameObject.SetActive(true);
-        }        
+        }
     }
 }

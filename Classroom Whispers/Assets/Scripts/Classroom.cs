@@ -6,7 +6,7 @@ public class Classroom : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        Classroom.RandomizeStudentAppearances();
+        //Classroom.RandomizeStudentAppearances();
     }
 	
 	// Update is called once per frame

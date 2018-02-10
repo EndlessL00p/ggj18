@@ -33,6 +33,11 @@ public class StudentLook : MonoBehaviour {
         _LArmSprite = gameObject.transform.Find("Torso/ArmLeft").GetComponent<SpriteRenderer>();
         _RArmSprite = gameObject.transform.Find("Torso/ArmRight").GetComponent<SpriteRenderer>();
 
+        if (student.IsEndStudent || student.isStartStudent)
+            LoadAppearancePrefs();
+        else
+            RandomizeAppearance();
+
         ApplyLook();
     }
 	
@@ -62,5 +67,23 @@ public class StudentLook : MonoBehaviour {
         if (Hair != null && _HairSprite != null) _HairSprite.sprite = Hair;
         if (Arm != null && _LArmSprite != null) _LArmSprite.sprite = Arm;
         if (Arm != null && _RArmSprite != null) _RArmSprite.sprite = Arm;
+    }
+
+    private void LoadAppearancePrefs()
+    {
+        CharacterCustomizer.CharacterType Type = MyStudent.IsEndStudent ? CharacterCustomizer.CharacterType.Crush : CharacterCustomizer.CharacterType.Player;
+        int iType = (int)Type;
+        int HeadIdx = UnityEngine.PlayerPrefs.GetInt(string.Format("Custom_Head{0}", iType));
+        int FaceIdx = UnityEngine.PlayerPrefs.GetInt(string.Format("Custom_Face{0}", iType));
+        int FringeIdx = UnityEngine.PlayerPrefs.GetInt(string.Format("Custom_Fringe{0}", iType));
+        //int GlassesIdx = UnityEngine.PlayerPrefs.GetInt(string.Format("Custom_Glasses{0}", iType));
+
+        LookDatabase db = GameObject.FindObjectOfType<LookDatabase>();
+        if (db != null)
+        {
+            Hair = db.HairTypes[FringeIdx].Hair;
+            Head = db.SkinTypes[HeadIdx].HeadRear;
+            Arm = db.SkinTypes[HeadIdx].Arm;
+        }
     }
 }
