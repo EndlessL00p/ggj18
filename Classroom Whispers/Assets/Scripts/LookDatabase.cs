@@ -10,13 +10,26 @@ public class SkinSet
     public Sprite Arm;    
 }
 
+[System.Serializable]
+public class HairSet
+{
+    public Sprite Hair;
+    public Sprite Fringe;
+}
+
 public class LookDatabase : MonoBehaviour {
 
     public List<SkinSet> SkinTypes = new List<SkinSet>();
     public List<Sprite> ShortHair = new List<Sprite>();
     public List<Sprite> LongHair = new List<Sprite>();
+    public List<HairSet> HairTypes = new List<HairSet>();
+
     public List<Sprite> TeacherHair = new List<Sprite>();
     public List<Sprite> TeacherFace = new List<Sprite>();
+
+    public List<Sprite> StudentFace = new List<Sprite>();
+
+    public List<Sprite> Glasses = new List<Sprite>();
 
     // Use this for initialization
     void Start () {
@@ -30,30 +43,36 @@ public class LookDatabase : MonoBehaviour {
 
     public SkinSet GetRandomSkinSet()
     {
-        int i = Random.RandomRange(0, SkinTypes.Count);
+        int i = Random.Range(0, SkinTypes.Count);
         return SkinTypes[i];
+    }
+
+    public HairSet GetRandomHairSet()
+    {
+        int i = Random.Range(0, HairTypes.Count);
+        return HairTypes[i];
     }
 
     public Sprite GetRandomHair()
     {
         List<Sprite> hairset = ShortHair;
-        if (Random.RandomRange(0,6) >= 3)
+        if (Random.Range(0,6) >= 3)
         {
             hairset = LongHair;
         }
 
-        int i = Random.RandomRange(0, hairset.Count);
+        int i = Random.Range(0, hairset.Count);
         return hairset[i];
     }
     public Sprite GetRandomTeacherHair()
     {
-        int i = Random.RandomRange(0, TeacherHair.Count);
+        int i = Random.Range(0, TeacherHair.Count);
         return TeacherHair[i];
     }
 
     public Sprite GetRandomTeacherFace()
     {
-        int i = Random.RandomRange(0, TeacherFace.Count);
+        int i = Random.Range(0, TeacherFace.Count);
         return TeacherFace[i];
     }
 }
